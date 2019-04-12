@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tab = FYTabBarController.init()
         window?.rootViewController = tab
         window?.makeKeyAndVisible()
+        UITabBar.appearance().isTranslucent = false
         return true
     }
 

@@ -12,7 +12,8 @@ class FYHomeViewController: FYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTableView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeigth - TabBarHeight)
+        self.customNavBar.isHidden = true
+        mainTableView.frame = CGRect(x: 0, y: NavBarHeight, width: kScreenWidth, height: kScreenHeigth - TabBarHeight - NavBarHeight)
         view.addSubview(mainTableView)
         
     }

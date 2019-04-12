@@ -13,7 +13,7 @@ import JXSegmentedView
   @objc optional func suborderAction()
 }
 
-class FYSubOrderViewController: FYBaseViewController {
+class FYSubOrderViewController: UIViewController {
     weak var delegate: FYSubOrderViewControllerDelegate?
    
     override func viewDidLoad() {

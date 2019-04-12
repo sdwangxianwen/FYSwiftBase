@@ -28,6 +28,7 @@
 		2103D2EC2260934100EA24D3 /* FYConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103D2DE2260934100EA24D3 /* FYConst.swift */; };
 		2103D2ED2260934100EA24D3 /* FYString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103D2DF2260934100EA24D3 /* FYString.swift */; };
 		2103D2EE2260934100EA24D3 /* FYView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103D2E02260934100EA24D3 /* FYView.swift */; };
+		2103D2F322609CA900EA24D3 /* FYNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2103D2F222609CA900EA24D3 /* FYNavView.swift */; };
 		3ADFAA9D85B086CE84778536 /* Pods_FYSwiftBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E35BEAC828BDB6604228CE /* Pods_FYSwiftBase.framework */; };
 		CC2B94F936AC9F27BF93019B /* Pods_FYSwiftBaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB8B0E52BC94F637FB65A34 /* Pods_FYSwiftBaseUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		2103D2DE2260934100EA24D3 /* FYConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FYConst.swift; sourceTree = "<group>"; };
 		2103D2DF2260934100EA24D3 /* FYString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FYString.swift; sourceTree = "<group>"; };
 		2103D2E02260934100EA24D3 /* FYView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FYView.swift; sourceTree = "<group>"; };
+		2103D2F222609CA900EA24D3 /* FYNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYNavView.swift; sourceTree = "<group>"; };
 		43C0BEFFDDAEA9FA8CBCA6F0 /* Pods_FYSwiftBaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FYSwiftBaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		474CA11D94C6DA44BBE92F0F /* Pods-FYSwiftBaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYSwiftBaseUITests.release.xcconfig"; path = "Target Support Files/Pods-FYSwiftBaseUITests/Pods-FYSwiftBaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		698E2C72E6C7D2BAC3BE7CFA /* Pods-FYSwiftBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYSwiftBase.debug.xcconfig"; path = "Target Support Files/Pods-FYSwiftBase/Pods-FYSwiftBase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,9 +230,9 @@
 		2103D2D52260934100EA24D3 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				2103D2D62260934100EA24D3 /* FYSubOrderViewController.swift */,
 				2103D2D72260934100EA24D3 /* FYMeViewController.swift */,
 				2103D2D82260934100EA24D3 /* FYOrderViewController.swift */,
+				2103D2D62260934100EA24D3 /* FYSubOrderViewController.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -241,6 +243,7 @@
 				2103D2DA2260934100EA24D3 /* FYTabBarController.swift */,
 				2103D2DB2260934100EA24D3 /* FYNavgationController.swift */,
 				2103D2DC2260934100EA24D3 /* FYBaseViewController.swift */,
+				2103D2F222609CA900EA24D3 /* FYNavView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				2103D2E62260934100EA24D3 /* FYSubOrderViewController.swift in Sources */,
 				2103D2EB2260934100EA24D3 /* FYBaseViewController.swift in Sources */,
 				2103D29E2260929800EA24D3 /* FYSwiftBase.xcdatamodeld in Sources */,
+				2103D2F322609CA900EA24D3 /* FYNavView.swift in Sources */,
 				2103D2EC2260934100EA24D3 /* FYConst.swift in Sources */,
 				2103D2962260929800EA24D3 /* AppDelegate.swift in Sources */,
 			);

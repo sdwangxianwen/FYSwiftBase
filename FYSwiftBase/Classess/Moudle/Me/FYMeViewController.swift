@@ -13,6 +13,7 @@ class FYMeViewController: FYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navTitle = "我的"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

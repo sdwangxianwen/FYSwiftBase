@@ -9,52 +9,22 @@
 import UIKit
 
 class FYNavgationController: UINavigationController {
-    
-    var isEnableEdegePan : Bool = true
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.interactivePopGestureRecognizer?.delegate = self
         self.delegate = self
-        
+       
         // 导航栏样式
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = UIColor.orange
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
-
-    }
-    
-    /// 启用、禁用屏幕边缘侧滑手势
-    func enableScreenEdgePanGestureRecognizer(_ isEnable: Bool) {
-        isEnableEdegePan = isEnable
-    }
-    /// 获取屏幕边缘侧滑手势
-    func getScreenEdgePanGestureRecognizer() -> UIScreenEdgePanGestureRecognizer? {
-        var edgePan: UIScreenEdgePanGestureRecognizer?
-        if let recognizers = view.gestureRecognizers, recognizers.count > 0 {
-            for recognizer in recognizers {
-                if recognizer is UIScreenEdgePanGestureRecognizer {
-                    edgePan = recognizer as? UIScreenEdgePanGestureRecognizer
-                    break
-                }
-            }
-        }
-        return edgePan
-    }
-    // 导航栏返回按钮点击
-    @objc fileprivate func backBtnClicked() {
-        popViewController(animated: true)
+        navigationBar.barTintColor = UIColor.white
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
     }
 }
 
 // MARK: - delegate
-extension FYNavgationController: UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+extension FYNavgationController: UINavigationControllerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         
-        if !isEnableEdegePan { // 禁用边缘侧滑手势
-            return false
-        }
         return children.count > 1
     }
     
@@ -69,6 +39,15 @@ extension FYNavgationController: UINavigationControllerDelegate, UIGestureRecogn
             
         }
         super.pushViewController(viewController, animated: animated)
+    }
+    
+    override open func popViewController(animated: Bool) -> UIViewController? {
+        return  super.popViewController(animated: animated)
+    }
+    
+    // 导航栏返回按钮点击
+    @objc fileprivate func backBtnClicked() {
+        super.popViewController(animated: true)
     }
 }
 
@@ -88,8 +67,7 @@ class BackButton: UIButton {
     func commonInit(target: Any, action: Selector) {
         
         self.adjustsImageWhenHighlighted = false
-        self.setBackgroundImage(UIImage(named: "fanhui_new"), for: UIControl.State.normal)
-        self.setBackgroundImage(UIImage(named: "fanhui_yin_new"), for: UIControl.State.highlighted)
+        self.setBackgroundImage(UIImage(named: "ic_back_grey"), for: UIControl.State.normal)
         self.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -(self.fy_width > 20 ? self.fy_width - 20 : self.fy_width), bottom: 0, right:0)
         self.addTarget(target, action: action, for: .touchUpInside)

@@ -17,7 +17,7 @@ class FYOrderViewController: FYBaseViewController,FYSubOrderViewControllerDelega
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navTitle = "我的订单"
         //segmentedViewDataSource一定要通过属性强持有！！！！！！！！！
         segmentedView.dataSource = segmentedDataSource
         segmentedView.delegate = self
@@ -48,8 +48,8 @@ class FYOrderViewController: FYBaseViewController,FYSubOrderViewControllerDelega
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        segmentedView.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 50)
-        listContainerView.frame = CGRect(x: 0, y:  50, width: view.bounds.size.width, height: kScreenHeigth - 50)
+        segmentedView.frame = CGRect(x: 0, y: NavBarHeight, width: view.bounds.size.width, height: 50)
+        listContainerView.frame = CGRect(x: 0, y: NavBarHeight + 50, width: view.bounds.size.width, height: kScreenHeigth - 50 - NavBarHeight)
     }
     
     func suborderAction() {
