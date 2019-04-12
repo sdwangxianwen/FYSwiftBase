@@ -9,7 +9,7 @@
 import UIKit
 import JXSegmentedView
 
-class FYOrderViewController: UIViewController,FYSubOrderViewControllerDelegate {
+class FYOrderViewController: FYBaseViewController,FYSubOrderViewControllerDelegate {
     var segmentedDataSource: JXSegmentedBaseDataSource?
     let segmentedView = JXSegmentedView()
     lazy var listContainerView: JXSegmentedListContainerView! = {
@@ -44,8 +44,8 @@ class FYOrderViewController: UIViewController,FYSubOrderViewControllerDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        segmentedView.frame = CGRect(x: 0, y: NavBarHeight, width: view.bounds.size.width, height: 50)
-        listContainerView.frame = CGRect(x: 0, y: NavBarHeight + 50, width: view.bounds.size.width, height: kScreenHeigth - NavBarHeight - 50)
+        segmentedView.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 50)
+        listContainerView.frame = CGRect(x: 0, y:  50, width: view.bounds.size.width, height: kScreenHeigth - 50)
     }
     
     func suborderAction() {

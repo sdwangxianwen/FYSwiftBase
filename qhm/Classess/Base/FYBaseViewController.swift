@@ -15,6 +15,7 @@ class FYBaseViewController: UIViewController,UITableViewDelegate,UITableViewData
         view.backgroundColor = UIColor.white
     }
     
+  
     //MARK:tableview的代理方法 和数据源
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

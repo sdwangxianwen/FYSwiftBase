@@ -28,7 +28,7 @@ class FYTabBarController: UITabBarController {
         childController.title = title
         childController.tabBarItem.image = UIImage.init(named: imageName)
         childController.tabBarItem.selectedImage = UIImage.init(named: imageSelectName)
-        let nav = FYNavgationController.init(rootViewController:childController)
+        let nav : FYNavgationController = FYNavgationController.init(rootViewController:childController)
         addChild(nav)
     }
 }

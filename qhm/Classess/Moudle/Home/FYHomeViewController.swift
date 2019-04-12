@@ -12,8 +12,9 @@ class FYHomeViewController: FYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTableView.frame = CGRect(x: 0, y: NavBarHeight, width: kScreenWidth, height: kScreenHeigth - TabBarHeight)
+        mainTableView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeigth - TabBarHeight)
         view.addSubview(mainTableView)
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
