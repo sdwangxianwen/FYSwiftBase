@@ -25,10 +25,11 @@ class FYTabBarController: UITabBarController {
     }
     
     func addChild(_ childController: UIViewController,title:String,imageName:String,imageSelectName:String) {
-        childController.title = title
-        childController.tabBarItem.image = UIImage.init(named: imageName)
-        childController.tabBarItem.selectedImage = UIImage.init(named: imageSelectName)
-        let nav : FYNavgationController = FYNavgationController.init(rootViewController:childController)
-        addChild(nav)
+        let navVC = FYNavgationController.init(rootViewController: childController)
+        navVC.tabBarItem = UITabBarItem.init(title: title, image:UIImage.init(named: imageName), selectedImage: UIImage.init(named: imageSelectName)?.withRenderingMode(.alwaysOriginal))
+    navVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.lightGray], for: .normal)
+    navVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.orange], for: .selected)
+        
+        addChild(navVC)
     }
 }

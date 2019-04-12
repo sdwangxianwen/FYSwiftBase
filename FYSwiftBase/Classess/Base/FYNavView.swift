@@ -18,7 +18,7 @@ class FYNavView: UIView {
     }()
     public lazy var navLine:UIView = {
         let navLine = UIView()
-        navLine.backgroundColor = UIColor.groupTableViewBackground
+        navLine.backgroundColor = UIColor.clear
         return navLine
     }()
     
