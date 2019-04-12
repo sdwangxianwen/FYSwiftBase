@@ -15,15 +15,20 @@ import JXSegmentedView
 
 class FYSubOrderViewController: FYBaseViewController {
     weak var delegate: FYSubOrderViewControllerDelegate?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColorRandom()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if self.delegate != nil {
-            self.delegate?.suborderAction?()
-        }
+       
+        
+        
+//        self.nav?.popViewController(animated: true)
+//        if self.delegate != nil {
+//            self.delegate?.suborderAction?()
+//        }
     }
     
 }

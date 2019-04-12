@@ -9,7 +9,7 @@
 import UIKit
 import JXSegmentedView
 
-class FYOrderViewController: FYBaseViewController,FYSubOrderViewControllerDelegate {
+class FYOrderViewController: FYBaseViewController,FYSubOrderViewControllerDelegate,UIGestureRecognizerDelegate {
     var segmentedDataSource: JXSegmentedBaseDataSource?
     let segmentedView = JXSegmentedView()
     lazy var listContainerView: JXSegmentedListContainerView! = {
@@ -25,19 +25,23 @@ class FYOrderViewController: FYBaseViewController,FYSubOrderViewControllerDelega
         segmentedView.contentScrollView = listContainerView.scrollView
         listContainerView.didAppearPercent = 0.01
         view.addSubview(listContainerView)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //处于第一个item的时候，才允许屏幕边缘手势返回
+//        //处于第一个item的时候，才允许屏幕边缘手势返回
         navigationController?.interactivePopGestureRecognizer?.isEnabled = (segmentedView.selectedIndex == 0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        //离开页面的时候，需要恢复屏幕边缘手势，不能影响其他页面
+//        //离开页面的时候，需要恢复屏幕边缘手势，不能影响其他页面
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
