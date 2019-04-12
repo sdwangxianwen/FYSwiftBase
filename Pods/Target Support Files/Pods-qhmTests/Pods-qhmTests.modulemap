@@ -1,6 +1,0 @@
-framework module Pods_qhmTests {
-  umbrella header "Pods-qhmTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

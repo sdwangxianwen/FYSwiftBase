@@ -1,27 +1,27 @@
 # Uncomment the next line to define a global platform for your project
  platform :ios, '9.0'
 
-target 'qhm' do
+target 'FYSwiftBase' do
+ 
+  use_frameworks!
+
 pod 'SnapKit'
 pod 'Moya', '~> 13.0.0'
 pod 'SwiftyJSON'
-#pod 'Moya-SwiftyJSONMapper'
 pod 'IQKeyboardManagerSwift'
 pod 'JXSegmentedView'
 
 #OC第三方
 pod 'YYModel'
 
-  use_frameworks!
+  # Pods for FYSwiftBase
 
-  # Pods for qhm
-
-  target 'qhmTests' do
+  target 'FYSwiftBaseTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'qhmUITests' do
+  target 'FYSwiftBaseUITests' do
     inherit! :search_paths
     # Pods for testing
   end

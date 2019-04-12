@@ -1,0 +1,6 @@
+framework module Pods_FYSwiftBase {
+  umbrella header "Pods-FYSwiftBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,0 @@
-framework module Pods_qhmUITests {
-  umbrella header "Pods-qhmUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,15 +1,15 @@
 //
-//  qhmTests.swift
-//  qhmTests
+//  FYSwiftBaseTests.swift
+//  FYSwiftBaseTests
 //
-//  Created by wang on 2019/4/11.
+//  Created by wang on 2019/4/12.
 //  Copyright © 2019 wang. All rights reserved.
 //
 
 import XCTest
-@testable import qhm
+@testable import FYSwiftBase
 
-class qhmTests: XCTestCase {
+class FYSwiftBaseTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

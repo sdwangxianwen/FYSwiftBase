@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_qhmVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_qhmVersionString[];
+FOUNDATION_EXPORT double Pods_FYSwiftBaseUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FYSwiftBaseUITestsVersionString[];
 

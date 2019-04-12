@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  qhm
+//  FYSwiftBase
 //
-//  Created by wang on 2019/4/11.
+//  Created by wang on 2019/4/12.
 //  Copyright © 2019 wang. All rights reserved.
 //
 
@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tab = FYTabBarController.init()
         window?.rootViewController = tab
         window?.makeKeyAndVisible()
-       
         return true
     }
 
@@ -58,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "qhm")
+        let container = NSPersistentContainer(name: "FYSwiftBase")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
