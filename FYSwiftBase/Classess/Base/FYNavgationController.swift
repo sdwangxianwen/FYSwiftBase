@@ -8,35 +8,27 @@
 
 import UIKit
 
-class FYNavgationController: UINavigationController {
+class FYNavgationController: UINavigationController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-       
-        // 导航栏样式
-        navigationBar.isTranslucent = false
-        navigationBar.barTintColor = UIColor.white
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
+        self.interactivePopGestureRecognizer?.delegate = self
+    }
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        print("反悔了")
+        return self.viewControllers.count > 1
     }
 }
 
 // MARK: - delegate
 extension FYNavgationController: UINavigationControllerDelegate {
-    
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        
-        return children.count > 1
-    }
+   
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        
         if self.viewControllers.count == 0 {
             return super.pushViewController(viewController, animated: true)
         } else {
             viewController.hidesBottomBarWhenPushed = true
-            let backBtn = BackButton(target: self, action: #selector(backBtnClicked))
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: backBtn)
-            
         }
         super.pushViewController(viewController, animated: animated)
     }
@@ -45,31 +37,5 @@ extension FYNavgationController: UINavigationControllerDelegate {
         return  super.popViewController(animated: animated)
     }
     
-    // 导航栏返回按钮点击
-    @objc fileprivate func backBtnClicked() {
-        super.popViewController(animated: true)
-    }
 }
 
-
-/// 导航栏左侧返回按钮
-class BackButton: UIButton {
-    
-    init(target: Any, action: Selector) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 21, height: 21))
-        commonInit(target: target, action: action)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func commonInit(target: Any, action: Selector) {
-        
-        self.adjustsImageWhenHighlighted = false
-        self.setBackgroundImage(UIImage(named: "ic_back_grey"), for: UIControl.State.normal)
-        self.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -(self.fy_width > 20 ? self.fy_width - 20 : self.fy_width), bottom: 0, right:0)
-        self.addTarget(target, action: action, for: .touchUpInside)
-    }
-}
